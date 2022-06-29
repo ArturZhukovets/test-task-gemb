@@ -48,3 +48,12 @@ right: 8px;
     padding-left: 0;
     list-style: none;
     }
+
+a {
+    text-decoration: none;
+
+}
+a:hover {
+    color: #04AA6D;
+    text-decoration: none;
+    transform: scale(1.1);

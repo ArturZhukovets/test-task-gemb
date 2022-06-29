@@ -1,12 +1,15 @@
+
 {% extends 'dataApp/base.html' %}
-
-
+{% load static %}
+{% block css_s %}
+<link rel="stylesheet" href="{% static 'dataApp/css/restaurant.css' %}">
+{% endblock %}
 {% block title %} TITLE {% endblock %}
 
 {% block content %}
-<div style="display: flex;justify-content: space-around;">
-    <a href="{% url 'restaurant'%}" ><h3>See restaurant information</h3></a>
-    <a href="{% url 'kfc' %}"><h3>See kfc information</h3></a>
+
+<div style="display: flex;justify-content: space-around; margin-top: 50px;">
+    <a href="{% url 'restaurant'%}" ><h3>Click here for restaurant information</h3></a>
 </div>
 
 {% endblock %}

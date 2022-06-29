@@ -1,7 +1,9 @@
 from django.shortcuts import render, HttpResponse
 from . models import Restaurant_infoModel
 from django.core.paginator import Paginator
-from parse import get_data_from_elements, collect_url
+from os import path
+from parse_restaurants import get_data_from_elements, collect_url
+
 # Create your views here.
 
 
@@ -9,13 +11,8 @@ def index(request):
     return render(request, 'dataApp/index.html')
 
 
-def kfc_data(request):
-    return render(request, 'dataApp/kfc.html')
-
-
 def restaurant_data_list(request):
-    # urls = collect_url()
-    # content = get_data_from_elements(urls)
+
     obj = Restaurant_infoModel.objects.all()
     paginator = Paginator(obj, 15)
     page_number = request.GET.get('page', 1) # default=1
