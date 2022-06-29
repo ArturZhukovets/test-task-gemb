@@ -1,0 +1,12 @@
+{% extends 'dataApp/base.html' %}
+
+
+{% block title %} TITLE {% endblock %}
+
+{% block content %}
+<div style="display: flex;justify-content: space-around;">
+    <a href="{% url 'restaurant'%}" ><h3>See restaurant information</h3></a>
+    <a href="{% url 'kfc' %}"><h3>See kfc information</h3></a>
+</div>
+
+{% endblock %}

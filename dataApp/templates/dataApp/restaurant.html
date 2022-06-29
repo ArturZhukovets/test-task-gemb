@@ -1,0 +1,35 @@
+{% extends 'dataApp/base.html' %}
+{% load static %}
+{% block title %} Restaurants-info {% endblock %}
+{% block css_s %}
+<link rel="stylesheet" href="{% static 'dataApp/css/restaurant.css' %}">
+{% endblock %}
+{% block content %}
+<div class="header" style="text-align:center;
+                           border: 10px">
+    <h3 style="margin-top:25px; margin-bottom:40px;">Here are the owners of Restaurants with the possibility of delivery</h3>
+</div>
+
+<div style="overflow-x: auto;">
+    <table>
+        <tr>
+            <th>Name of organization</th>
+            <th>Supervisor</th>
+            <th>Address</th>
+            <th>Telephone</th>
+        </tr>
+        {% for value in obj.object_list %}
+        <tr>
+            <td>{{ value.name|title }}</td>
+            <td>{{ value.supervisor|title }}</td>
+            <td>{{ value.address|title }}</td>
+            {% if value.telephone == None %}
+                <td>Phone not listed</td>
+            {% else %}
+            <td>{{ value.telephone }}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+   </table>
+</div>
+{% endblock %}
