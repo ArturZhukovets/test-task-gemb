@@ -1,9 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from . models import Restaurant_infoModel
 from django.core.paginator import Paginator
-from os import path
-from parse_restaurants import get_data_from_elements, collect_url
-
 # Create your views here.
 
 
